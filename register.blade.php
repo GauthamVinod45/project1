@@ -205,7 +205,7 @@ function fnameValidate() {
   if(firstname==""){
     document.getElementById("error-fname").innerHTML="The firstname field is required";
     document.getElementById("label-fname").style.color = "red";
-    document.getElementById("fname").style.setProperty('border-color', 'red');
+    document.getElementById("fname").style.setProperty('border-color', 'blue');
   }
   else{
     document.getElementById("error-fname").innerHTML="";
