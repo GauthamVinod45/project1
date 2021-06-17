@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Sign Up | Open</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+  <style>
+  *{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+  }
+  body{
+    background-color:#f5f7fb;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    padding-top:25px;
+    padding-left:195px;
+    padding-right:210px;
+  }
+  .container{
+    background-color:#f5f7fb;
+  }
+  .btn1{
+    border:none;
+    outline:none;
+    height:50px;
+    width:100%;
+    background-color:#639;
+    color:white;
+    border-radius:30px;
+    font-weight: bold;
+  }
+  .btn1:hover{
+    background-color: white;
+    border:1px solid;
+    color: #639;
+  }
+  .form-control{
+    border-top:0;
+    border-left:0;
+    border-right:0;
+    border-radius: 0;
+  }
+  .form-control:focus{
+    border-color: #639;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-radius: 0;
+  }
+  .col-lg-5{
+    background-image: linear-gradient(335deg, rgba(31, 26, 53, 0.95), rgba(31, 26, 53, 0)),url('https://open-frontend-bucket.s3.amazonaws.com/open-money/login/dashboard.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height:500px;
+    border-radius: 20px 0px 0px 20px;
+    margin-top:30px;
+    margin-bottom:30px;
+    box-shadow: 5px 5px 10px grey;
+  }
+  .col-lg-7{
+    background-color:white;
+    padding:60px;
+    border-radius:20px;
+    box-shadow: 10px 10px 20px grey;
+  }
+  .img-fluid{
+    width:90px;
+    padding-top:10px;
+    padding-left:10px;
+  }
+  
+</style>
+</head>
+
+<body>
+
+  <section class="Form my-4 mx-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5">
+          <img class="img-fluid" src="https://open-frontend-bucket.s3.amazonaws.com/open-money/logo/logo.svg">
+        </div>
+        <div class="col-lg-7">
+          <h1 class="mb-2" style="font-size: 28px;">Let's get started</h1>
+           
+           <form>
+            <div class="form-row mt-4">
+              <div class="col">
+                <input type="text" id="fname" name="fname" placeholder="First name" class="form-control my-3">
+                <span class="text-danger" id="error-fname"></span>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col">
+                <input type="text" id="lname" name="lname" placeholder="Last name" class="form-control my-3">
+                <span class="text-danger" id="error-lname"></span>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col">
+                <input type="text" id="email" name="email" placeholder="Email ID" class="form-control my-3">
+                <span class="text-danger" id="error-email"></span>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col">
+                <input type="text" id="phnumber" name="phnumber" maxlength="10" onkeypress="allowNumbersOnly(event)" placeholder="Mobile number" class="form-control my-3">
+                <span class="text-danger" id="error-phnumber"></span>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col">
+                <input type="password" id="pass" name="pass" placeholder="Password" class="form-control my-3">
+                <span class="text-danger" id="error-pass"></span>
+            </div>
+            </div>
+            <div class="form-row">
+              <div class="col">
+                <button type="button" id="signup" onclick="Signup()" class="btn1 mt-4 mb-4">SIGN UP</button>
+              </div>
+            </div>
+            <p class="mb-5 text-center">Already on Open ? <a href="{{route('login')}}">Login here</a></p>
+          </form>
+            
+           </div>
+        </div>
+      
+    </div>
+  </section>
+
+</body>  
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
+
+<script>
+function Signup()
+{
+  var firstname=document.getElementById("fname").value;
+  var lastname=document.getElementById("lname").value;
+  var email=document.getElementById("email").value;
+  var number=document.getElementById("phnumber").value;
+  var password=document.getElementById("pass").value;
+
+  var l=number.toString().length;
+  var pl=password.toString().length;
+  var today = new Date();
+  var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+  var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+  var dateTime = date+' '+time;
+  var Exp = /((^[0-9]+[a-z]+)|(^[a-z]+[0-9]+))+[0-9a-z]+$/i;
+  var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+  console.log(dateTime);
+
+  document.getElementById("error-fname").innerHTML="";
+  document.getElementById("error-lname").innerHTML="";
+  document.getElementById("error-email").innerHTML="";
+  document.getElementById("error-phnumber").innerHTML="";
+  document.getElementById("error-pass").innerHTML=""; 
+
+  if(firstname==""||lastname==""||email==""||number==""||password=="")
+  { 
+    // Swal.fire(
+  //                'Signup Failed',
+  //                'Fields cant be empty',
+  //                'error'
+  //                )
+    if(firstname=="")
+        document.getElementById("error-fname").innerHTML="The firstname field is required";
+    if(lastname=="")
+        document.getElementById("error-lname").innerHTML="The lastname field is required";
+    if(email=="")
+        document.getElementById("error-email").innerHTML="The email field is required";
+    if(number=="")
+        document.getElementById("error-phnumber").innerHTML="The mobile number field is required";
+    if(password=="")
+        document.getElementById("error-pass").innerHTML="The password field is required";              
+  }
+  else if(!email.match(mailformat))
+  {
+    // Swal.fire(
+    //              'Signup Failed',
+    //              'Enter valid Email ID',
+    //              'error'
+    //              )
+    document.getElementById("error-email").innerHTML="Enter valid Email ID";
+  }
+  else if(l<10||l>10)
+  {
+    // Swal.fire(
+  //                'Signup Failed',
+  //                'Enter Valid Mobile number',
+  //                'error'
+  //                )
+    document.getElementById("error-phnumber").innerHTML="Enter Valid Mobile number";
+  }
+  else if(pl<8)
+  {
+    // Swal.fire(
+  //                'Signup Failed',
+  //                'Password should have minimum 8 characters',
+  //                'error'
+  //            )
+    document.getElementById("error-pass").innerHTML="Password should have minimum 8 characters";
+  }
+  else if(!password.match(Exp))
+  {
+    // Swal.fire(
+    //              'Signup Failed',
+    //              'Password should be alphanumeric',
+    //              'error'
+    //          )
+    document.getElementById("error-pass").innerHTML="Password should be alphanumeric";
+  }
+  else
+  {
+      $.ajax({
+              type:'POST',
+              url:"{{route('save')}}",
+              data:{"_token": "{{ csrf_token() }}",'first_name':firstname,'last_name':lastname,'email':email,'phone_number':number,'password':password},
+              success:function(data){
+              var result=JSON.parse(data)
+
+                if(result.status==200)
+              {
+                Swal.fire(
+                 'Account created',
+                 '',
+                 'success'
+                 )
+              }
+              else
+              {
+                Swal.fire(
+                 'Signup Failed',
+                 '',
+                 'error'
+                 )
+              }
+
+              }
+
+            });
+
+  }
+  
+}
+function allowNumbersOnly(e) {
+  var code = (e.which) ? e.which : e.keyCode;
+  if (code > 31 && (code < 48 || code > 57)) {
+    e.preventDefault();
+  }
+}
+</script>
+
+</html>
